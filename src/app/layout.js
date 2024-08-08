@@ -14,7 +14,6 @@ export default function RootLayout({ children }) {
       <body className={notoSerifJp.className}>
         <Particle />
         {children}
-        <footer>©第5回RUNTEQ祭運営</footer>
       </body>
     </html>
   );

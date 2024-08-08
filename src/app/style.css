@@ -51,14 +51,6 @@ body::before {
   left: 0;
 }
 
-body:has(header)::before {
-  background-position: center;
-  -webkit-mask-image: linear-gradient(90deg, transparent, black 50%);
-  mask-image: linear-gradient(90deg, transparent, black 50%);
-  left: -40%;
-  transform: scale(-1, 1);
-}
-
 /* 紅葉パーティクル */
 #particles-js {
   position: fixed;
@@ -101,4 +93,3 @@ footer p {
   text-align: end;
   padding-right: 20px;
 }
-
