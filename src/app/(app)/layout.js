@@ -1,9 +1,12 @@
 import Headers from "@/components/headers";
+import { Suspense } from "react";
 
 export default function AppLayout({ children }) {
   return (
     <div className="flex flex-col justify-center items-center min-h-screen m-auto">
-      <Headers />
+      <Suspense fallback={<></>} >
+        <Headers />
+      </Suspense>
       <main className="flex-grow mt-12 m-auto">
         {children}
       </main>
