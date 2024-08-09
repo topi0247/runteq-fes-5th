@@ -2,10 +2,10 @@ import Link from "next/link";
 import Star from "@/components/star";
 import Styles from "./style.module.css";
 
-export default function LinkButton({ children, href }) {
+export default function LinkButton({ children, href, addClass = "", target = false }) {
   return (
-    <div className="flex justify-center items-center mt-8">
-      <Link href={href} className={Styles.button}>
+    <div className={`flex justify-center items-center ${addClass}`}>
+      <Link href={href} className={Styles.button} target={target && "_blank"} rel={target && "noopener noreferrer"}>
         {children}
         <Star className={Styles.star1} />
         <Star className={Styles.star2} />
