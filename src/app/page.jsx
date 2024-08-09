@@ -8,7 +8,7 @@ export default function Home() {
         <article>
           <section className="py-8 px-4">
             <h1><Image src="/images/logo.png" alt="logo" width={1920} height={1080} className="object-cover w-full h-full" /></h1>
-            <LinkButton href="app" addClass="mt-8">アプリ一覧</LinkButton>
+            <LinkButton href="app" addClass="mt-8" addLinkClass="px-8 py-4">アプリ一覧</LinkButton>
           </section>
         </article>
       </main>

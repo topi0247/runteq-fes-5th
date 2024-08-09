@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-/* ============================================= */
-/*      Template name : momiji                   */
-/*      Copyright : 2023 Serenity                */
-/*      利用規約を遵守の上、ご利用ください。     */
-/*      二次配布・販売は禁止しております。       */
-/*      https://serenity.talemaze.xyz/           */
-/*      Serenityはとぴの運営しているサイトです   */
-/* ============================================= */
+/* ===================================================== */
+/*      Template name : momiji                           */
+/*      Copyright : 2023 Serenity                        */
+/*      利用規約を遵守の上、ご利用ください。             */
+/*      二次配布・販売は禁止しております。               */
+/*      https://serenity.talemaze.xyz/                   */
+/*      Serenityはとぴが別名義で運営しているサイトです   */
+/* ===================================================== */
 
 /* ==== 配色 ==== */
 :root {
@@ -59,7 +59,6 @@ body::before {
   height: 100%;
 }
 
-/* ==== メイン ==== */
 main {
   text-align: start;
   width: 100%;
@@ -90,4 +89,22 @@ footer p {
   margin: 0;
   text-align: end;
   padding-right: 20px;
+}
+
+hr {
+  border: none;
+  text-align: center;
+  overflow: visible;
+  margin: 20px auto;
+}
+
+hr::after {
+  content: "";
+  background-image: url("/images/momiji_icon.png");
+  background-repeat: space;
+  display: inline-block;
+  height: 16px;
+  width: 60px;
+  line-height: 30px;
+  position: relative;
 }

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const List = ({ type = "", typeName = "全て" }) => {
-  return (<li className="w-full"><Link href={`app${type && `?type=${type}`}`} className="bg-white block w-full pl-4 py-2 border-b border-orange-400 md:border-b-0 md:border-r md:text-center md:py-4 md:bg-opacity-40 md:text-lg">{typeName}</Link></li>)
+  return (<li className="w-full"><Link href={`/app${type && `?type=${type}`}`} className="bg-white block w-full pl-4 py-2 border-b border-orange-400 md:border-b-0 md:border-r md:text-center md:py-4 md:bg-opacity-40 md:text-lg">{typeName}</Link></li>)
 }
 
 export default function Headers() {

@@ -10,8 +10,8 @@ export default function Cards({ appName, imageId, term, name, shortDescription, 
         <p>{term}期　{name}</p>
         <p>{shortDescription}</p>
         <div className="flex justify-center items-center gap-4">
-          <LinkButton href={`app/${uuid}}`}>詳細</LinkButton>
-          <LinkButton href={url} target >サービス</LinkButton>
+          <LinkButton href={`/app/${uuid}}`} addLinkClass="px-4 py-2">詳細</LinkButton>
+          <LinkButton href={url} target addLinkClass="px-4 py-2" >サービス</LinkButton>
         </div>
       </div>
     </section>
