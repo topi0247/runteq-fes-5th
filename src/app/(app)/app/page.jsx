@@ -1,4 +1,6 @@
 import Cards from "@/components/cards";
+import IndexHeadTag from "@/components/indexHeadTag";
+import LinkButton from "@/components/link";
 
 const Data = Array.from({ length: 9 }, (_, i) => ({
   appName: `アプリ名${i + 1}`,
@@ -11,11 +13,16 @@ const Data = Array.from({ length: 9 }, (_, i) => ({
 }));
 
 export default function App() {
+
   return (
     <article className="w-full md:mt-8">
-      <h1 className="text-center text-3xl" >- 全て -</h1>
+      <IndexHeadTag />
       <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
         {Data.map((data, i) => <Cards key={i} {...data} />)}
       </div>
+      <section className="my-8">
+        <h2 className="text-xl text-center my-4">投票フォームはこちら！</h2>
+        <LinkButton href="" >投票フォーム</LinkButton>
+      </section>
     </article>);
 }
