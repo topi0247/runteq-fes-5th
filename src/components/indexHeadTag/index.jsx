@@ -42,8 +42,8 @@ export default function IndexHeadTag() {
 
   return (
     <>
-      <h1 className="text-center text-3xl" >- {headName} -</h1>
-      <p className="text-center mt-4">{headDescription}</p>
+      <h1 className="text-center text-3xl text-outline" >- {headName} -</h1>
+      <p className="text-center text-xl mt-4 text-outline">{headDescription}</p>
     </>
   );
 };
