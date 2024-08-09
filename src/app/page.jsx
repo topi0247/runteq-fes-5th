@@ -4,11 +4,11 @@ import LinkButton from "@/components/link";
 export default function Home() {
   return (
     <>
-      <main>
+      <main className="container m-auto">
         <article>
           <section className="py-8 px-4">
             <h1><Image src="/images/logo.png" alt="logo" width={1920} height={1080} className="object-cover w-full h-full" /></h1>
-            <LinkButton href="app" addClass="mt-8" addLinkClass="px-8 py-4">アプリ一覧</LinkButton>
+            <LinkButton href="app" addClass="mt-8" addLinkClass="px-4 py-2 md:px-8 md:py-4">アプリ一覧</LinkButton>
           </section>
         </article>
       </main>
