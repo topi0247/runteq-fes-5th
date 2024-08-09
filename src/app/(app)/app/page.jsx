@@ -1,6 +1,7 @@
 import Cards from "@/components/cards";
 import IndexHeadTag from "@/components/indexHeadTag";
 import LinkButton from "@/components/link";
+import { Suspense } from "react";
 
 const Data = Array.from({ length: 9 }, (_, i) => ({
   appName: `アプリ名${i + 1}`,
@@ -19,7 +20,9 @@ export default function App() {
 
   return (
     <article className="w-full md:mt-8">
-      <IndexHeadTag />
+      <Suspense fallback={<></>} >
+        <IndexHeadTag />
+      </Suspense>
       <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
         {Data.map((data, i) => <Cards key={i} {...data} />)}
       </div>
