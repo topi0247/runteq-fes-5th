@@ -11,6 +11,7 @@ const Data = {
   url: "https://www.google.com",
   xUrl: "https://x.com",
   timesUrl: "https://chat.runteq.jp/runteq/channels/times_52a_nishina_kanae",
+  githubUrl: "https://github.com",
 };
 
 export default function AppShow() {

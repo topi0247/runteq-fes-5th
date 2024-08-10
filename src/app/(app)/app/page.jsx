@@ -14,6 +14,7 @@ const Data = Array.from({ length: 9 }, (_, i) => ({
   url: "https://www.google.com",
   xUrl: "https://x.com",
   timesUrl: "https://chat.runteq.jp/runteq/channels/times_52a_nishina_kanae",
+  githubUrl: "https://github.com",
 }));
 
 export default function App() {
