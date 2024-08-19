@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ja">
-      <body className={notoSerifJp.className}>
+      <body className={`${notoSerifJp.className} w-full flex justify-center items-center`}>
         <Particle />
         {children}
       </body>

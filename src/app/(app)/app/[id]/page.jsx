@@ -1,25 +1,19 @@
+"use client";
+
 import Card from "@/components/card";
+import useSWR from "swr";
 
-const Data = {
-  appName: "アプリ名",
-  imageId: "1CBONSTvbOLSwPtinrlu8A6fU1VGwsR96",
-  term: "52",
-  name: "とぴ",
-  shortDescription: "アプリの簡単な説明ダミーテキストダミーテキスト",
-  description: "アプリの説明ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト",
-  uuid: "1",
-  url: "https://www.google.com",
-  xUrl: "https://x.com",
-  timesUrl: "https://chat.runteq.jp/runteq/channels/times_52a_nishina_kanae",
-  githubUrl: "https://github.com",
-};
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
-export default function AppShow() {
+export default function AppShow({ params }) {
+  const { data } = useSWR(`/api/${params.id}`, fetcher);
+
+  if (!data) return <div>Loading...</div>;
 
   return (
     <article className="w-full md:mt-8">
       <div className="w-full container">
-        <Card {...Data} />
+        <Card {...data[0]} />
       </div>
     </article>);
 }

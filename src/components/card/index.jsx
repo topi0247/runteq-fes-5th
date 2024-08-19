@@ -1,22 +1,44 @@
 import Image from "next/image";
 import LinkButton from "@/components/link";
 
-export default function Card({ appName, imageId, term, name, shortDescription, description, url, xUrl, timesUrl, githubUrl }) {
+export default function Card({ name, type, twitterId, timesUrl, appName, appUrl, githubUrl, imgUrl, shortDescription, description }) {
+
+  const userNames = name.split(",");
+
+  let appType = "";
+  switch (type) {
+    case "miniapp":
+      appType = "ミニアプリ";
+      break;
+    case "pf":
+      appType = "ポートフォリオ";
+      break;
+    case "engineer":
+      appType = "現役エンジニア";
+      break;
+    case "team":
+      appType = "チーム開発";
+      break;
+  }
+
   return (
-    <section className="p-4">
+    <section className="p-4 md:w-[1000px] max-w-full">
       <div className="flex flex-col justify-center items-center gap-4">
         <h2 className="text-center text-2xl">{appName}</h2>
-        <Image src={`https://lh3.googleusercontent.com/d/${imageId}`} alt="アプリ名" width={1000} height={800} className="object-cover w-full h-full" />
-        <p>{term}期　{name}</p>
+        <div className="max-w-96 w-full">
+          <Image src={imgUrl} alt={appName} width={1000} height={800} className="object-cover w-full h-full" />
+        </div>
+        <p className="flex justify-center items-center gap-2">{userNames.map((userName, i) => <span key={i}>{userName}</span>)}</p>
+        <p className="bg-blue-500 bg-opacity-50 border border-blue-500 rounded-full text-sm text-white px-1">{appType}</p>
         <p>{shortDescription}</p>
-        <hr className="" />
-        <p>{description}</p>
+        <hr />
+        <p className="whitespace-pre-wrap w-full md:max-w-[600px]">{description}</p>
         <div className="flex flex-col justify-center items-center gap-4 md:flex-row-reverse">
-          <LinkButton href={url} target addLinkClass="px-4 py-2">サービス</LinkButton>
+          <LinkButton href={appUrl} target addLinkClass="px-4 py-2">サービス</LinkButton>
           <div className="flex justify-center items-center gap-4">
-            {xUrl && <LinkButton href={xUrl} addLinkClass="px-4 py-2" target>X</LinkButton>}
+            {twitterId && <LinkButton href={`https://x.com/${twitterId}`} addLinkClass="px-4 py-2" target>X</LinkButton>}
             {timesUrl && <LinkButton href={timesUrl} addLinkClass="px-4 py-2" target>times</LinkButton>}
-            {githubUrl && <LinkButton href="" addLinkClass="px-4 py-2" target>GitHub</LinkButton>}
+            {githubUrl && <LinkButton href={githubUrl} addLinkClass="px-4 py-2" target>GitHub</LinkButton>}
           </div>
         </div>
       </div>
