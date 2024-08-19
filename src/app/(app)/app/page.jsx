@@ -39,9 +39,9 @@ export default function App() {
       <Suspense fallback={<></>} >
         <FetchData />
       </Suspense>
-      <section className="my-8">
+      {/* <section className="my-8">
         <h2 className="text-xl text-center my-4">投票フォームはこちら！</h2>
         <LinkButton href="" addLinkClass="px-8 py-4" >投票フォーム</LinkButton>
-      </section>
+      </section> */}
     </article>);
 }
