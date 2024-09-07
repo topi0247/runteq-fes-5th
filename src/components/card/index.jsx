@@ -1,5 +1,6 @@
 import Image from "next/image";
 import LinkButton from "@/components/link";
+import MarkdownComponent from "../markdown";
 
 export default function Card({ name, type, twitterId, timesUrl, appName, appUrl, githubUrl, imgUrl, shortDescription, description }) {
 
@@ -32,7 +33,9 @@ export default function Card({ name, type, twitterId, timesUrl, appName, appUrl,
         <p className="bg-blue-500 bg-opacity-50 border border-blue-500 rounded-full text-sm text-white px-1">{appType}</p>
         <p>{shortDescription}</p>
         <hr />
-        <p className="whitespace-pre-wrap w-full md:max-w-[600px]">{description}</p>
+        <div className="whitespace-pre-wrap w-full md:max-w-[600px]">
+          <MarkdownComponent content={description} />
+        </div>
         <div className="flex flex-col justify-center items-center gap-4 md:flex-row-reverse">
           <LinkButton href={appUrl} target addLinkClass="px-4 py-2">サービス</LinkButton>
           <div className="flex justify-center items-center gap-4">

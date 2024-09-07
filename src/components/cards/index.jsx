@@ -9,7 +9,9 @@ export default function Cards({ id, name, appName, appUrl, imgUrl, shortDescript
     <section className="p-4 max-w-96 w-full">
       <div className="flex flex-col justify-center items-center gap-4">
         <h2 className="text-center text-2xl">{appName}</h2>
-        <Image src={imgUrl} alt={appName} width={1000} height={800} className="object-cover w-full h-full" />
+        <div className="w-full">
+          <Image src={imgUrl} alt={appName} width={1000} height={1000} className="w-full h-full object-contain aspect-video" />
+        </div>
         <p className="flex justify-center items-center gap-2">{userNames.map((userName, i) => <span key={i}>{userName}</span>)}</p>
         <p>{shortDescription}</p>
         <div className="flex justify-center items-center gap-4">
