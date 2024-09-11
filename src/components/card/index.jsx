@@ -2,9 +2,11 @@ import Image from "next/image";
 import LinkButton from "@/components/link";
 import MarkdownComponent from "../markdown";
 
-export default function Card({ name, type, twitterId, timesUrl, appName, appUrl, githubUrl, imgUrl, shortDescription, description }) {
+export default function Card({ name, type, twitterId, timesUrl, appName, appUrl, githubUrl, imgUrl, shortDescription, description, team_name, team_twitter, team_times }) {
 
   const userNames = name.split(",");
+  const teamTwitters = team_twitter?.split(",");
+  const teamTimes = team_times?.split(",");
 
   let appType = "";
   switch (type) {
@@ -29,7 +31,8 @@ export default function Card({ name, type, twitterId, timesUrl, appName, appUrl,
         <div className="max-w-96 w-full">
           <Image src={imgUrl} alt={appName} width={1000} height={800} className="object-cover w-full h-full" />
         </div>
-        <p className="flex justify-center items-center gap-2">{userNames.map((userName, i) => <span key={i}>{userName}</span>)}</p>
+        {team_name && <p className="">チーム名: {team_name}</p>}
+        <p className="flex flex-wrap justify-center items-center gap-2">{userNames.map((userName, i) => <span key={i}>{userName}</span>)}</p>
         <p className="bg-blue-500 bg-opacity-50 border border-blue-500 rounded-full text-sm text-white px-1">{appType}</p>
         <p>{shortDescription}</p>
         <hr />
@@ -44,6 +47,22 @@ export default function Card({ name, type, twitterId, timesUrl, appName, appUrl,
             {githubUrl && <LinkButton href={githubUrl} addLinkClass="px-4 py-2" target>GitHub</LinkButton>}
           </div>
         </div>
+        {teamTwitters && (
+          <>
+            <hr />
+            <div className="grid grid-cols-1 md:grid-cols-3 flex-wrap gap-2 justify-center items-center">
+              {teamTwitters.map((twitter, i) => <LinkButton key={i} href={`https://x.com/${twitter.split("/")[1]}`} addLinkClass="w-full px-4 py-2 text-center" target>{twitter.split("/")[0]}さんのX</LinkButton>)}
+            </div>
+          </>
+        )}
+        {teamTimes &&
+          <>
+            <hr />
+            <div className="grid grid-cols-1 md:grid-cols-3 flex-wrap gap-2 justify-center items-center">
+              {teamTimes.map((times, i) => <LinkButton key={i} href={`https://chat.runteq.jp/runteq/channels/${times.split("/")[1]}`} addLinkClass="w-full px-4 py-2 text-center" target>{times.split("/")[0]}さんのtimes</LinkButton>)}
+            </div>
+          </>
+        }
       </div>
     </section>
   )

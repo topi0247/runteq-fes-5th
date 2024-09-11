@@ -12,7 +12,11 @@ export default function Cards({ id, name, appName, appUrl, imgUrl, shortDescript
         <div className="w-full">
           <Image src={imgUrl} alt={appName} width={1000} height={1000} className="w-full h-full object-contain aspect-video" />
         </div>
-        <p className="flex justify-center items-center gap-2">{userNames.map((userName, i) => <span key={i}>{userName}</span>)}</p>
+        <p className="flex justify-center items-center gap-2 flex-wrap">
+          {userNames.map((userName, i) =>
+            <span key={i}>{userName}</span>
+          )}
+        </p>
         <p>{shortDescription}</p>
         <div className="flex justify-center items-center gap-4">
           <LinkButton href={`/app/${id}`} addLinkClass="px-4 py-2">詳細</LinkButton>
