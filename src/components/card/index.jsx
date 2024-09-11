@@ -47,7 +47,7 @@ export default function Card({ name, type, twitterId, timesUrl, appName, appUrl,
             {githubUrl && <LinkButton href={githubUrl} addLinkClass="px-4 py-2" target>GitHub</LinkButton>}
           </div>
         </div>
-        {teamTwitters && (
+        {teamTwitters[0] && (
           <>
             <hr />
             <div className="grid grid-cols-1 md:grid-cols-3 flex-wrap gap-2 justify-center items-center">
@@ -55,7 +55,7 @@ export default function Card({ name, type, twitterId, timesUrl, appName, appUrl,
             </div>
           </>
         )}
-        {teamTimes &&
+        {teamTimes[0] &&
           <>
             <hr />
             <div className="grid grid-cols-1 md:grid-cols-3 flex-wrap gap-2 justify-center items-center">
